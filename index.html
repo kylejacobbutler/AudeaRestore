@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Audea Restore</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style type="text/css">
+      .download{
+        display: none;
+      }
+      .error{
+        display: none;
+      }
+    </style>
+  </head>
+  <body><br><br>
+    <center>
+      <h1>Audea Restore</h1>
+    <div class="download">
+      <button type="button" class="btn btn-success" onclick="download()">Install AudeaApp</button>
+    </div>
+
+    <div class="error">
+      <h3 style="color: red;">Audea Device Not Detected.</h3>
+    </div>
+   </center>
+    <script src="platform.js"></script>
+  <script type="text/javascript">
+    var model = "AudeaTablet"
+var name= platform.name; // 'IE'
+var version= platform.version; // '10.0'
+var layout= platform.layout; // 'Trident'
+var os= platform.os; // 'Windows Server 2008 R2 / 7 x64'
+var description= platform.description; // 'IE 10.0 x86 (platform preview; running in IE 7 mode) on Windows Server 2008 R2 / 7 x64'
+console.log(description);
+if ( description.includes(model) ){
+$('.download').fadeIn();
+} else{
+  $('.error').fadeIn();
+}
+
+function download()
+{
+      location.href = "./AudeaApp.apk";
+} 
+  </script>
+  </body>
+</html>
