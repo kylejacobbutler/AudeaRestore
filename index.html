@@ -19,11 +19,12 @@
     <center>
       <h1>Audea Restore</h1>
     <div class="download">
-      <button type="button" class="btn btn-success" onclick="download()">Install AudeaApp</button>
+      <br>
+      <button type="button" class="btn btn-success" onclick="download()">Install AudeaApp</button><br>
     </div>
 
-    <div class="error">
-      <h3 style="color: red;">Audea Device Not Detected.</h3>
+    <div class="error"><br>
+      <h3 style="color: red;">Audea Device Not Detected.</h3><br>
     </div>
    </center>
     <script src="platform.js"></script>
@@ -36,10 +37,10 @@ var os= platform.os; // 'Windows Server 2008 R2 / 7 x64'
 var description= platform.description; // 'IE 10.0 x86 (platform preview; running in IE 7 mode) on Windows Server 2008 R2 / 7 x64'
 console.log(description);
 if ( description.includes(model) ){
-  $('.download').append(description, os, layout, version, name);
+  $('.download').prepend(description, os, layout, version, name);
 $('.download').fadeIn();
 } else{
-  $('.error').append(description, os, layout, version, name);
+  $('.error').prepend(description, os, layout, version, name);
   $('.error').fadeIn();
 }
 
